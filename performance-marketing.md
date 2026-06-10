@@ -70,8 +70,8 @@ Lower volume than Meta but significantly higher intent — user is actively sear
 | `resort near Ahmedabad` | Phrase | `/rds-farm` |
 | `3 star hotel Ahmedabad` | Exact | `/hotel` |
 | `wedding venue Ahmedabad` | Phrase | `/rds-farm` |
-| `farmhouse booking near Ahmedabad` | Phrase | `/rda-farm-2` |
-| `corporate event venue Ahmedabad` | Phrase | `/contact` |
+| `farmhouse booking near Ahmedabad` | Phrase | `/rds-farm-2` |
+| `corporate event venue Ahmedabad` | Phrase | `/rds-farm` |
 
 ### Rules
 - Always send traffic to the specific property page, not the homepage

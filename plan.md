@@ -10,7 +10,7 @@
 
 | Property | Type |
 |---|---|
-| RD Hotel | Hotel + Restaurant (50+ 3-star rooms) |
+| RD's Hotel | Hotel + Restaurant (50+ 3-star rooms) |
 | RDS Farm | Resort + Party Plot |
 | RDS Farm 2 | Resort + Party Plot (adjacent to RDS Farm) |
 
@@ -35,7 +35,7 @@
 ## Site Structure
 
 ```
-rddevelopers.com/
+rdsvenues.com/
 ├── /                     → Homepage (hero, 3 property cards, highlights, about us section, contact section + Google Maps)
 ├── /hotel                → Hotel landing (rooms, restaurant, amenities, about section, contact + Google Maps)
 ├── /hotel/gallery        → Hotel photo gallery
@@ -373,7 +373,7 @@ Run this **after** the app is fully built and tested locally.
 ### `wrangler.toml` (reference)
 
 ```toml
-name = "rddevelopers"
+name = "rdsvenues"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 main = ".open-next/worker.js"
@@ -384,7 +384,7 @@ id = "<your-kv-id>"
 
 [[r2_buckets]]
 binding = "ASSETS"
-bucket_name = "rddevelopers-assets"
+bucket_name = "rdsvenues-assets"
 ```
 
 ### `open-next.config.ts` (reference)

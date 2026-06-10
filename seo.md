@@ -9,11 +9,11 @@
 | `3 star hotel in Ahmedabad` | `/hotel` |
 | `hotel with restaurant Ahmedabad` | `/hotel` |
 | `resort near Ahmedabad` | `/rds-farm` |
-| `farmhouse booking Ahmedabad` | `/rds-farm`, `/rda-farm-2` |
-| `party plot Ahmedabad` | `/rds-farm`, `/rda-farm-2` |
-| `wedding venue near Ahmedabad` | `/contact`, `/rds-farm` |
-| `corporate event venue Ahmedabad` | `/rds-farm`, `/rda-farm-2` |
-| `large event venue Ahmedabad` | Combined farm section or `/contact` |
+| `farmhouse booking Ahmedabad` | `/rds-farm`, `/rds-farm-2` |
+| `party plot Ahmedabad` | `/rds-farm`, `/rds-farm-2` |
+| `wedding venue near Ahmedabad` | `/rds-farm`, `/rds-farm-2` |
+| `corporate event venue Ahmedabad` | `/rds-farm`, `/rds-farm-2` |
+| `large event venue Ahmedabad` | `/rds-farm`, `/rds-farm-2` |
 
 ---
 
@@ -24,8 +24,8 @@ Built directly into the Next.js site at launch.
 - **JSON-LD structured data** per page type:
   - `Hotel` schema → `/hotel`
   - `FoodEstablishment` schema → `/hotel` (restaurant section)
-  - `EventVenue` schema → `/rds-farm`, `/rda-farm-2`
-  - `LocalBusiness` schema → `/`, `/contact`
+  - `EventVenue` schema → `/rds-farm`, `/rds-farm-2`
+  - `LocalBusiness` schema → `/`
   - `BlogPosting` schema → `/blog/[slug]`
 - **`generateMetadata()`** — unique title + description per page, pulled from Sanity where applicable
 - **`sitemap.xml`** — auto-generated from all static routes + dynamic blog slugs from Sanity
@@ -74,9 +74,9 @@ Three separate GBP listings — treated as independent local SEO assets.
 
 | Listing | Categories |
 |---|---|
-| RD Hotel | Hotel, Restaurant |
+| RD's Hotel | Hotel, Restaurant |
 | RDS Farm | Resort, Event Venue, Party Plot |
-| RDA Farm 2 | Resort, Event Venue, Party Plot |
+| RDS Farm 2 | Resort, Event Venue, Party Plot |
 
 ### Per Listing Optimisation
 - 10+ professional photos at launch
