@@ -13,10 +13,13 @@ export async function POST(req: NextRequest) {
 
   switch (type) {
     case 'property':
-      revalidatePath('/', 'layout')
-      revalidatePath('/hotel')
-      revalidatePath('/rds-farm')
-      revalidatePath('/rds-farm-2')
+      revalidatePath('/', 'layout')       // header nav updates
+      revalidatePath('/')                  // homepage property cards
+      revalidatePath('/[slug]', 'page')    // all property pages
+      revalidatePath('/gallery')           // gallery groups by property name
+      break
+    case 'room':
+      revalidatePath('/[slug]', 'page')    // hotel page shows rooms
       break
     case 'offer':
       revalidatePath('/')
@@ -25,20 +28,20 @@ export async function POST(req: NextRequest) {
     case 'testimonial':
       revalidatePath('/')
       break
+    case 'gallery':
+      revalidatePath('/')                  // homepage gallery preview
+      revalidatePath('/gallery')
+      break
     case 'blogPost':
       revalidatePath('/blog')
       revalidatePath('/blog/[slug]', 'page')
       break
-    case 'gallery':
-      revalidatePath('/gallery')
-      revalidatePath('/hotel/gallery')
-      revalidatePath('/rds-farm/gallery')
-      revalidatePath('/rds-farm-2/gallery')
-      break
     case 'siteSettings':
-      revalidatePath('/', 'layout')
+      revalidatePath('/', 'layout')        // footer, header WhatsApp, CTABanner
+      revalidatePath('/')                  // homepage hero, about, experiences, map
       break
     default:
+      revalidatePath('/', 'layout')
       revalidatePath('/')
   }
 
