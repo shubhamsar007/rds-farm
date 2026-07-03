@@ -15,7 +15,15 @@ export const blogPost = defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: {source: 'title'},
+      options: {
+        source: 'title',
+        slugify: (input: string) =>
+          input
+            .toLowerCase()
+            .replace(/'/g, '')
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, ''),
+      },
       validation: (r) => r.required(),
     }),
     defineField({
@@ -29,6 +37,18 @@ export const blogPost = defineType({
       title: 'Published At',
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
+    }),
+    defineField({
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      description: 'e.g. Weddings, Corporate, Venues, Dining, Travel',
+    }),
+    defineField({
+      name: 'readTime',
+      title: 'Read Time',
+      type: 'string',
+      description: 'e.g. "5 min read"',
     }),
     defineField({
       name: 'seoDescription',

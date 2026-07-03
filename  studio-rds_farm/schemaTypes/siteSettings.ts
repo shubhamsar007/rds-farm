@@ -38,6 +38,48 @@ export const siteSettings = defineType({
       type: 'url',
     }),
     defineField({
+      name: 'experiences',
+      title: 'Experiences Section',
+      type: 'array',
+      description: 'Cards shown in the "Crafted for Every Occasion" section on the homepage',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'title', title: 'Title', type: 'string'},
+            {name: 'description', title: 'Description', type: 'text', rows: 2},
+            {name: 'image', title: 'Image', type: 'image', options: {hotspot: true}},
+          ],
+          preview: {select: {title: 'title', media: 'image'}},
+        },
+      ],
+    }),
+    defineField({
+      name: 'heroImage',
+      title: 'Homepage Hero Image',
+      type: 'image',
+      options: {hotspot: true},
+      description: 'Full-screen background image on the homepage',
+    }),
+    defineField({
+      name: 'heroEyebrow',
+      title: 'Hero Eyebrow Text',
+      type: 'string',
+      description: 'Small label above the headline (e.g. "RD Developers · Ahmedabad")',
+    }),
+    defineField({
+      name: 'heroHeadline',
+      title: 'Hero Headline',
+      type: 'string',
+      description: 'Main heading on the homepage hero',
+    }),
+    defineField({
+      name: 'heroSubtext',
+      title: 'Hero Subtext',
+      type: 'string',
+      description: 'Tagline below the headline',
+    }),
+    defineField({
       name: 'homepageAboutTitle',
       title: 'Homepage About Title',
       type: 'string',
