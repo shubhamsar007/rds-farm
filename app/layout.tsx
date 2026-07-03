@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { client } from "@/lib/sanity";
-import { siteSettingsQuery } from "@/lib/queries";
+import { siteSettingsQuery, propertyNavQuery } from "@/lib/queries";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -46,12 +46,21 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const siteSettings = await client.fetch(siteSettingsQuery).catch(() => null);
+  const [siteSettings, propertyLinks] = await Promise.all([
+    client.fetch(siteSettingsQuery).catch(() => null),
+    client.fetch(propertyNavQuery).catch(() => []),
+  ]);
 
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body>
-        <Header />
+        <Header
+          propertyLinks={(propertyLinks ?? []).map((p: { name: string; slug: string }) => ({
+            label: p.name,
+            href: `/${p.slug}`,
+          }))}
+          whatsappNumber={siteSettings?.whatsappNumber}
+        />
         <main>{children}</main>
         <Footer
           phone={siteSettings?.phone}

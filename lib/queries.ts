@@ -80,6 +80,13 @@ export const allPropertySlugsQuery = `
   *[_type == "property" && !(_id in path("drafts.**"))]{ "slug": slug.current }
 `
 
+export const propertyNavQuery = `
+  *[_type == "property" && !(_id in path("drafts.**"))] | order(_createdAt asc) {
+    name,
+    "slug": slug.current
+  }
+`
+
 export const roomsQuery = `
   *[_type == "room" && !(_id in path("drafts.**"))] | order(order asc) {
     _id,
