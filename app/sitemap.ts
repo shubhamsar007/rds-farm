@@ -2,9 +2,7 @@ import { MetadataRoute } from "next";
 import { client } from "@/lib/sanity";
 import { allPropertySlugsQuery, allBlogSlugsQuery } from "@/lib/queries";
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://rds-farm.nilimasahu2201.workers.dev";
+const BASE_URL = "https://rdsvenues.com";
 
 const STATIC_ROUTES: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/`,        lastModified: new Date(), changeFrequency: "weekly",  priority: 1.0 },
