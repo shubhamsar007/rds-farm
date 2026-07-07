@@ -8,5 +8,9 @@ NEXT_PUBLIC_SANITY_PROJECT_ID = "i203g7ij"
 NEXT_PUBLIC_SANITY_DATASET = "production"
 
 [[kv_namespaces]]
-binding = "NEXT_CACHE_WORKERS_KV"
+binding = "NEXT_INC_CACHE_KV"
+id = "401e01bd83394801bd3758953810e4a1"
+
+[[kv_namespaces]]
+binding = "NEXT_TAG_CACHE_KV"
 id = "401e01bd83394801bd3758953810e4a1"
